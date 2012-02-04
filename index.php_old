@@ -1,0 +1,21 @@
+﻿<?php
+require 'facebook.php';
+
+$facebook = new Facebook(array(
+  'appId'  => '127050684078153',
+  'secret' => '73ace9d64305ac92b18fa86612a66b03',
+));
+
+switch($_GET['action']){
+	case 'profile':
+		getProfile($facebook);
+		break;
+	case 'albums':
+		getFbAlbums($facebook);
+		break;
+}
+
+function getProfile($facebook){
+	json_encode($facebook->api('PoomTshaK/'));
+}
+?>
